@@ -10,7 +10,7 @@ class TimeEmbedding(Layer):
         self.hidden_embedding_size = hidden_embedding_size
 
 
-    def build(self):
+    def build(self, input_shape):
         self.emb_weights = self.add_weight(name='weights', shape=(self.hidden_embedding_size,), initializer='uniform',
                                            trainable=True)
         self.emb_biases = self.add_weight(name='biases', shape=(self.hidden_embedding_size,), initializer='uniform',
